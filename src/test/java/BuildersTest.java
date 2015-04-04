@@ -69,4 +69,24 @@ public class BuildersTest extends Assert {
         builder.calories(300);
         assertThat(someFood.getCalories(), is(300));
     }
+
+    @Test
+    public void testIdeaInnerBuilder() throws Exception {
+        idea_innerbuilder.NutritionFacts cocaCola = idea_innerbuilder.NutritionFacts.newBuilder()
+                .servingSize(240)
+                .servings(8)
+                .calories(100)
+                .sodium(35)
+                .carbohydrate(27)
+                .build();
+        assertThat(cocaCola.getServingSize(), is(240));
+        assertThat(cocaCola.getCarbohydrate(), is(27));
+
+        idea_innerbuilder.NutritionFacts someFood = idea_innerbuilder.NutritionFacts.newBuilder()
+                .servingSize(100)
+                .servings(200)
+                .build();
+        assertThat(someFood.getServingSize(), is(100));
+        assertThat(someFood.getCalories(), is(0));
+    }
 }
