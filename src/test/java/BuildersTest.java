@@ -47,4 +47,26 @@ public class BuildersTest extends Assert {
         assertThat(someFood.getServingSize(), is(100));
         assertThat(someFood.getCalories(), is(0));
     }
+
+    @Test
+    public void testElegantBuilder() throws Exception {
+        elegant_builder.NutritionFacts cocaCola = elegant_builder.NutritionFacts.builder(240, 8)
+                .calories(100)
+                .sodium(35)
+                .carbohydrate(27)
+                .build();
+        assertThat(cocaCola.getServingSize(), is(240));
+        assertThat(cocaCola.getCarbohydrate(), is(27));
+
+        elegant_builder.NutritionFacts someFood = elegant_builder.NutritionFacts.builder(100, 200).build();
+        assertThat(someFood.getServingSize(), is(100));
+        assertThat(someFood.getCalories(), is(0));
+
+        // Side effect - builder methods change existing instance, so don't reuse the same builder
+        elegant_builder.NutritionFacts.Builder builder = elegant_builder.NutritionFacts.builder(100, 200);
+        someFood = builder.build();
+        assertThat(someFood.getCalories(), is(0));
+        builder.calories(300);
+        assertThat(someFood.getCalories(), is(300));
+    }
 }
