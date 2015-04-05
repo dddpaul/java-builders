@@ -1,6 +1,8 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.OptionalInt;
+
 import static org.hamcrest.core.Is.is;
 
 public class BuildersTest extends Assert {
@@ -115,5 +117,36 @@ public class BuildersTest extends Assert {
                 .servings(200)
                 .build();
         assertThat(moreFood, is(someFood)); // overridden equals() makes his job
+    }
+
+    @Test
+    public void testImmutables() throws Exception {
+        immutables.NutritionFacts cocaCola = immutables.ImmutableNutritionFacts.builder()
+                .servingSize(240)
+                .servings(8)
+                .calories(100)
+                .sodium(35)
+                .carbohydrate(27)
+                .build();
+        assertThat(cocaCola.servingSize(), is(240));
+        assertThat(cocaCola.carbohydrate(), is(OptionalInt.of(27)));
+        assertThat(cocaCola.toString(), is("NutritionFacts{servingSize=240, servings=8, calories=OptionalInt[100], fat=OptionalInt.empty, sodium=OptionalInt[35], carbohydrate=OptionalInt[27]}"));
+
+        immutables.NutritionFacts someFood = immutables.ImmutableNutritionFacts.builder()
+                .servingSize(100)
+                .servings(200)
+                .build();
+        assertThat(someFood.servingSize(), is(100));
+        assertThat(someFood.calories(), is(OptionalInt.empty()));
+
+        immutables.ImmutableNutritionFacts moreFood = immutables.ImmutableNutritionFacts.builder()
+                .servingSize(100)
+                .servings(200)
+                .build();
+        assertThat(moreFood, is(someFood)); // overridden equals() makes his job
+
+        immutables.ImmutableNutritionFacts muchMoreFood = moreFood.withServingSize(300);
+        assertThat(muchMoreFood.servingSize(), is(300));
+        assertThat(muchMoreFood.servings(), is(200));
     }
 }
