@@ -89,4 +89,31 @@ public class BuildersTest extends Assert {
         assertThat(someFood.getServingSize(), is(100));
         assertThat(someFood.getCalories(), is(0));
     }
+
+    @Test
+    public void testAutoValue() throws Exception {
+        auto_value.NutritionFacts cocaCola = auto_value.NutritionFacts.builder()
+                .servingSize(240)
+                .servings(8)
+                .calories(100)
+                .sodium(35)
+                .carbohydrate(27)
+                .build();
+        assertThat(cocaCola.servingSize(), is(240));
+        assertThat(cocaCola.carbohydrate(), is(27));
+        assertThat(cocaCola.toString(), is("NutritionFacts{servingSize=240, servings=8, calories=100, fat=0, sodium=35, carbohydrate=27}"));
+
+        auto_value.NutritionFacts someFood = auto_value.NutritionFacts.builder()
+                .servingSize(100)
+                .servings(200)
+                .build();
+        assertThat(someFood.servingSize(), is(100));
+        assertThat(someFood.calories(), is(0));
+
+        auto_value.NutritionFacts moreFood = auto_value.NutritionFacts.builder()
+                .servingSize(100)
+                .servings(200)
+                .build();
+        assertThat(moreFood, is(someFood)); // overridden equals() makes his job
+    }
 }
