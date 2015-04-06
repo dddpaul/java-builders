@@ -7,3 +7,4 @@ Links:
 * [IntelliJ IDEA plugin which generates an inner builder class](https://github.com/analytically/innerbuilder)
 * [Google AutoValue](https://github.com/google/auto/tree/master/value)
 * [Immutables](http://immutables.github.io/)
+* [Project Lombok Builder](http://projectlombok.org/features/Builder.html)

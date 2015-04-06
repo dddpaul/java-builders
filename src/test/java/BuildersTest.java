@@ -149,4 +149,17 @@ public class BuildersTest extends Assert {
         assertThat(muchMoreFood.servingSize(), is(300));
         assertThat(muchMoreFood.servings(), is(200));
     }
+
+    @Test
+    public void testLombok() throws Exception {
+        lombok.NutritionFacts cocaCola = lombok.NutritionFacts.builder()
+                .servingSize(240)
+                .servings(8)
+                .calories(100)
+                .sodium(35)
+                .carbohydrate(27)
+                .build();
+        assertThat(cocaCola.servingSize, is(240));
+        assertThat(cocaCola.carbohydrate, is(27));
+     }
 }
