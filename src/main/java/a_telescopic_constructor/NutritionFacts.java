@@ -1,4 +1,4 @@
-package telescopic_constructor;
+package a_telescopic_constructor;
 
 /**
  * Telescoping constructor pattern - poor scalability

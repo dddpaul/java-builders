@@ -1,4 +1,6 @@
-package lombok;
+package g_lombok;
+
+import lombok.Builder;
 
 /**
  * Project Lombok <a href="http://projectlombok.org/features/Builder.html">Builder</a>

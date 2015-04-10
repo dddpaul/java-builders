@@ -18,7 +18,7 @@ import java.util.OptionalInt;
  * <p>
  * Cons:
  * <ul>
- * <li>it's a code generation nevertheless.
+ * <li>it's a code generation nevertheless, so it requires something like "mvn compile" before using
  * </ul>
  */
 @Value.Immutable

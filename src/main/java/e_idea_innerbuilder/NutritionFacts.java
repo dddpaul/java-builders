@@ -1,4 +1,4 @@
-package idea_innerbuilder;
+package e_idea_innerbuilder;
 
 /**
  * IntelliJ IDEA <a href="https://github.com/analytically/innerbuilder">InnerBuilder</a> plugin

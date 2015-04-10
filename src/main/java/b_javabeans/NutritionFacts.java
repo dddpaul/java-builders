@@ -1,4 +1,4 @@
-package javabeans;
+package b_javabeans;
 
 /**
  * JavaBeans Pattern - allows inconsistency, mandates mutability
