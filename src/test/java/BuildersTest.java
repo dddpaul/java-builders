@@ -65,7 +65,7 @@ public class BuildersTest extends Assert {
         assertThat(someFood.getServingSize(), is(100));
         assertThat(someFood.getCalories(), is(0));
 
-        // Side effect - c_builder methods change existing instance, so don't reuse the same c_builder
+        // Side effect - builder methods change existing instance, so don't reuse the same builder
         d_elegant_builder.NutritionFacts.Builder builder = d_elegant_builder.NutritionFacts.builder(100, 200);
         someFood = builder.build();
         assertThat(someFood.getCalories(), is(0));

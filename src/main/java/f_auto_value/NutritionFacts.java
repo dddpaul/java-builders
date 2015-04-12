@@ -15,7 +15,7 @@ import com.google.auto.value.AutoValue;
  * Cons:
  * <ul>
  * <li>it's a code generation nevertheless, so it requires something like "mvn compile" before using
- * <li>c_builder support is experimental (you must use latest version from GitHub).
+ * <li>builder support is experimental (you must use latest version from GitHub).
  * </ul>
  */
 @AutoValue
@@ -33,7 +33,7 @@ public abstract class NutritionFacts {
     public abstract int servingSize();
     public abstract int servings();
 
-    // Optional, default values specified in c_builder
+    // Optional, default values specified in builder
     public abstract int calories();
     public abstract int fat();
     public abstract int sodium();

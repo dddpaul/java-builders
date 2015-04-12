@@ -1,7 +1,7 @@
 package d_elegant_builder;
 
 /**
- * Elegant c_builder pattern, see <a href="http://habrahabr.ru/post/244521/">Java elegant c_builder</a>
+ * Elegant builder pattern, see <a href="http://habrahabr.ru/post/244521/">Java elegant builder</a>
  * <p>
  * Pros:
  * <ul>
@@ -11,7 +11,7 @@ package d_elegant_builder;
  * <p>
  * Cons:
  * <ul>
- * <li>c_builder methods change existing instance, so don't reuse the same c_builder
+ * <li>builder methods change existing instance, so don't reuse the same builder
  * <li>properties are non-final, so object is mutable, see <a href="http://stackoverflow.com/a/10301179/981083">Is this a safe publication of object?</a>
  * </ul>
  *
