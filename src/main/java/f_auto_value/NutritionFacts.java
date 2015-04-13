@@ -8,7 +8,8 @@ import com.google.auto.value.AutoValue;
  * Pros:
  * <ul>
  * <li>no boilerplate at all;
- * <li>automatic equals(), hasCode() and toString() methods generation.
+ * <li>automatic equals(), hasCode() and toString() methods generation;
+ * <li>JSON <a href="http://labs.encoded.io/2015/01/25/immutable-value-objects-in-java-with-google-autovalue/">serializable/deserializable</a>.
  * </ul>
  *
  * <p>

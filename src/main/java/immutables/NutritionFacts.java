@@ -12,6 +12,7 @@ import java.util.OptionalInt;
  * <li>boilerplate is gone completely;
  * <li>automatic equals(), hasCode() and toString() methods generation;
  * <li>automatic withXXX() methods generation;
+ * <li>JSON <a href="http://immutables.github.io/json.html">serializable/deserializable</a>;
  * <li>uses Java 8 features (Optional etc.)
  * </ul>
  *
