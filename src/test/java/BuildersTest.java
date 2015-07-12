@@ -134,6 +134,19 @@ public class BuildersTest extends Assert {
      }
 
     @Test
+    public void testPojoBuilder() throws Exception {
+        h_pojo_builder.NutritionFacts cocaCola = new h_pojo_builder.NutritionFactsBuilder()
+                .withServingSize(240)
+                .withServings(8)
+                .withCalories(100)
+                .withSodium(35)
+                .withCarbohydrate(27)
+                .build();
+        assertThat(cocaCola.getServingSize(), is(240));
+        assertThat(cocaCola.getCarbohydrate(), is(27));
+    }
+
+    @Test
     public void testImmutables() throws Exception {
         NutritionFacts cocaCola = immutables.ImmutableNutritionFacts.builder()
                 .servingSize(240)

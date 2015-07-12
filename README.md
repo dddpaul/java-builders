@@ -79,7 +79,19 @@ Pros:
 Cons:
 * it's an [AST manipulation](http://notatube.blogspot.ru/2010/11/project-lombok-trick-explained.html) i.e. the real magic :)
 * plugin for IDE is required.
+
+### POJO Builder
  
+POJO Builder [NutritionFacts.java](src/main/java/h_pojo_builder/NutritionFacts.java) example.
+
+Pros:
+* can be used in conjunction with AutoValue or Lombok;
+* is recommended by [Umputun](http://www.umputun.com/) :)
+
+Cons:
+* can't generate getters and setters;
+* it's a code generation nevertheless, so it requires something like "mvn compile" before using.
+
 ### Immutables
 
 Immutables [NutritionFacts.java](src/main/java/immutables/NutritionFacts.java) example.
@@ -91,7 +103,7 @@ Pros:
 * uses Java 8 features (Optional etc.)
 
 Cons:
-* it's a code generation nevertheless, so it requires something like "mvn compile" before using
+* it's a code generation nevertheless, so it requires something like "mvn compile" before using.
 
 ### Links
 
@@ -100,4 +112,5 @@ Cons:
 * [IntelliJ IDEA plugin which generates an inner builder class](https://github.com/analytically/innerbuilder)
 * [Google AutoValue](https://github.com/google/auto/tree/master/value), [Immutable Value Objects in Java with Google AutoValue](http://labs.encoded.io/2015/01/25/immutable-value-objects-in-java-with-google-autovalue/)
 * [Project Lombok Builder](http://projectlombok.org/features/Builder.html)
+* [POJO Builder](https://github.com/mkarneim/pojobuilder)
 * [Immutables.org](http://immutables.github.io/), [JSON serialization](http://immutables.github.io/json.html)
